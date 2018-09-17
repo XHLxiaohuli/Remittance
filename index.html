@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico">
+    <title>优尚汇</title>
+    <style>
+      #appTop{
+        width: 100%;
+        height: 44px;
+        display: none;
+        background: #fff;
+        z-index: 1000;
+        position: fixed;
+        top: 0;
+      }
+      #appfooter{
+        width: 100%;
+        height: 34px;
+        display: none;
+        background: #fff;
+        position: fixed;
+        bottom: 0;
+        z-index: 1000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="appTop"></div>
+    <div id="app"></div>
+    <div id="appfooter"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script>
+      (function(){
+        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        var ratio = window.devicePixelRatio || 1;
+        var screen = {
+          width : window.screen.width * ratio,
+          height : window.screen.height * ratio
+        };
+        if (iOS && screen.width == 1125 && screen.height === 2436) {
+          document.getElementById("appTop").style.display="block"
+          document.getElementById("appfooter").style.display="block"
+          document.getElementById("app").style.marginTop="44px"
+          document.getElementById("app").style.paddingBottom="34px"
+        }
+      })();
+    </script>
+</html>
